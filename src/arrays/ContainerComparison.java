@@ -4,14 +4,6 @@ package arrays;
  */
 import java.util.*;
 
-class BerylliumSphere{
-    private static long count = 0;
-    private final long id = count++;
-    public String toString(){
-        return "Sphere: " + this.id;
-    }
-}
-
 public class ContainerComparison {
     public static void main(String[] args){
         BerylliumSphere[] spheres = new BerylliumSphere[10];
