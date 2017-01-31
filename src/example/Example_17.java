@@ -4,7 +4,6 @@ package example;
  * Created by anonymous.vn1985 on 1/31/2017.
  */
 import java.util.*;
-import arrays.*;
 import net.mindview.util.*;
 
 class BigDecimalExample_17{
