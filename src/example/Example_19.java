@@ -5,14 +5,21 @@ package example;
  */
 import java.util.*;
 
-class PlayerFootball{
-    private byte numberPlayer;
-    public PlayerFootball(byte numberPlayer){
+class PlayerFootball implements Comparable<PlayerFootball>{
+    private int numberPlayer;
+    private Random random = new Random(47);
+    public PlayerFootball(int numberPlayer){
         this.numberPlayer = numberPlayer;
     }
     public boolean equals(Object player){
         return player.getClass().getSimpleName().equals("PlayerFootball") &&
                 this.numberPlayer == ((PlayerFootball)player).numberPlayer ? true : false;
+    }
+    public int compareTo(PlayerFootball player){
+        return this.numberPlayer < player.numberPlayer ? -1 : (this.numberPlayer == player.numberPlayer ? 0 : 1);
+    }
+    public String toString(){
+        return "PlayerFootball: " + this.numberPlayer;
     }
 }
 public class Example_19 {
@@ -20,8 +27,8 @@ public class Example_19 {
         PlayerFootball[] teamA = new PlayerFootball[11];
         PlayerFootball[] teamB = new PlayerFootball[11];
         for(int i = 0; i < 11; i++){
-            teamA[i] = new PlayerFootball((byte)(i + 1));
-            teamB[i] = new PlayerFootball((byte)(i + 1));
+            teamA[i] = new PlayerFootball(i);
+            teamB[i] = new PlayerFootball(i);
         }
         System.out.println(teamA[0].getClass().getSimpleName());
         System.out.println(teamB[0].getClass().getSimpleName());
